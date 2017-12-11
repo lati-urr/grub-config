@@ -1,0 +1,510 @@
+
+#!/bin/sh
+exec tail -n +3 $0
+set pager=1
+background_image (hd0,gpt6)/usr/share/pixmaps/backgrounds/gnome/konohana-kitan-yuzu.png
+set color_normal=blue/black
+set superusers="urr"
+password_pbkdf2 urr grub.pbkdf2.sha512.10000.7E6749846C25B6AE249AAE5699C4EF93E378A18368D2830F0030C25BCD6713C80D558E3D1224FCCA5536F56D669B24456827A128B86DC774672969190259571A.65CDB5D333F46D169CF91ECA9F6B837B6A0FF3C83CD157729FE7216B4FF36B0EB860441BE5418ED0FA7A83F9531C3D42A70C0060464CE1E1246654946B7F8611
+submenu 'reboot/shutdown' --unrestricted --class shutdown {
+    menuentry 'reboot' --class reboot {
+	echo 'reboot中...'
+	reboot
+    }
+    menuentry 'shutdown' --class shutdown {
+	echo 'shutdown中...'
+	halt
+    }
+}
+function gochiusa_try {
+	 for var in 1 2 3 4 5 6 7 8 9
+	 do
+	 echo
+	 background_image (hd0,gpt6)/home/cl/picture/frame/gochiusa/gochiusa_000$var.jpg
+	 done
+	 for var in 10 11 12 13 14 15 16 17 18 19 20
+	 do
+	 echo
+	 background_image (hd0,gpt6)/home/cl/picture/frame/gochiusa/gochiusa_00$var.jpg
+	 done
+}
+function gochiusa_short {
+	 for var in 1 2 3 4 5 6 7 8 9
+	 do
+	 echo
+	 background_image (hd0,gpt6)/home/cl/picture/frame/gochiusa/gochiusa_000$var.jpg
+	 done
+	 for var in 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50
+	 do
+	 echo
+	 background_image (hd0,gpt6)/home/cl/picture/frame/gochiusa/gochiusa_00$var.jpg
+	 done
+}
+function gochiusa_kai {
+echo
+background_image (hd0,gpt6)/home/cl/picture/frame/gochiusa_resize/gochiusa_0001.jpg
+echo
+background_image (hd0,gpt6)/home/cl/picture/frame/gochiusa_resize/gochiusa_0002.jpg
+echo
+background_image (hd0,gpt6)/home/cl/picture/frame/gochiusa_resize/gochiusa_0003.jpg
+echo
+background_image (hd0,gpt6)/home/cl/picture/frame/gochiusa_resize/gochiusa_0004.jpg
+echo
+background_image (hd0,gpt6)/home/cl/picture/frame/gochiusa_resize/gochiusa_0005.jpg
+echo
+background_image (hd0,gpt6)/home/cl/picture/frame/gochiusa_resize/gochiusa_0006.jpg
+echo
+background_image (hd0,gpt6)/home/cl/picture/frame/gochiusa_resize/gochiusa_0007.jpg
+echo
+background_image (hd0,gpt6)/home/cl/picture/frame/gochiusa_resize/gochiusa_0008.jpg
+echo
+background_image (hd0,gpt6)/home/cl/picture/frame/gochiusa_resize/gochiusa_0009.jpg
+echo
+background_image (hd0,gpt6)/home/cl/picture/frame/gochiusa_resize/gochiusa_0010.jpg
+}
+
+submenu 'GRUBLUE FANTASY' --unrestricted --class lati {
+    menuentry '数当て' --class game {
+	set color_normal=green/black
+	background_image ($root)/grub/themes/lati/leftdark_miku_resize.png
+	var=83
+	while true ;
+	do
+		read KEYWORD
+            	if [ "${KEYWORD}" == "" ];then
+		continue
+		fi
+            	if [ "${KEYWORD}" == "q" ];then
+		   echo "ぽむぅ！"
+		   sleep 1
+		   break
+            	else
+		   if [ "${KEYWORD}" == "$var" ];then
+		      echo "しなぁ！(正解)"
+		      sleep 3
+		      break
+		   else
+			if [ $KEYWORD -gt $var ];then
+			   echo "もっと小さい"
+		    	elif [ $KEYWORD -lt $var ];then
+			   echo "もっと大きい"
+		    	else
+			   echo "???"
+		    	fi
+		    	continue
+		   fi	     
+          	 fi
+	done
+    }
+    menuentry 'GRUBLUE FANTASY' --class lati {
+    background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/first.png
+    set color_normal=black/black
+#    play 300 200 1 400 1 600 1 800 1 1000 1 1200 1 1400 1 1600 1 1800 1 2000 1
+    MOKA=0
+    KAPUTINO=0
+    ESPRESSO=0
+    MILK=0
+    SHIFON=0
+    echo "こんにちは！ぼくはシナモン！シナモンって男の子だったの〜？って聞かれるけど、ぼくは男の子だよ！"
+    sleep 1
+    echo "これから僕の友達とみんなで遊びたいんだけど、どうやって集まろうか悩んでるの"
+    sleep 1
+    echo "モカちゃん、カプチーノ、エスプレッソ、シフォン、みるくを呼びたいんだけど..."
+    sleep 1
+    echo "近いところから行ったほうがいいかな...?"
+    sleep 1
+    while true;
+    do
+	if [ $ESPRESSO == 1 ];then
+	    if [ $SHIFON == 1 ]; then
+		break
+	    fi
+	fi
+	background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/cinnamon.jpg
+	set color_normal=black/black
+	echo "どうやって移動する？"
+	echo "1.歩く"
+	echo "2.自転車"
+	echo "3.飛ぶ"
+	echo "1か2か3を選んでエンターで選択"
+	read FIRST
+	if [ "${FIRST}" == "m" ];then
+	   echo "モカちゃん"
+	   echo "${MOKA}"
+	   echo "カプチーノ"
+	   echo "${KAPUTINO}"
+	   echo "エスプレッソ"
+	   echo "${ESPRESSO}"
+	   echo "シフォン"
+	   echo "${SHIFON}"
+	   echo "みるく"
+	   echo "${MILK}"
+	   echo "0はまだ誘ってないよ1はもう誘ったよ"
+	   sleep 5
+	   continue
+	fi
+	if [ "${FIRST}" == "" ];then
+	    continue
+	fi
+	if [ "${FIRST}" == "1" ];then
+	    clear
+	    set color_normal=black/black
+	    background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/walk.jpg
+	    echo "どこに行こうか？"
+	    echo "1.向かいのおうち"
+	    echo "2.つみきの庭のおうち"
+	    while true;
+	    do 
+		read SECOND
+		if [ "${SECOND}" == "" ];then
+		    continue
+		fi
+		if [ "${SECOND}" == "1" ];then
+		    clear
+		    background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/kaputino-event1.png
+		    echo "カプチーノのおうちだね！"
+		    sleep 1
+		    echo "でも今は寝てるみたい..."
+		    echo "カプチーノは食いしん坊だからおかしを出すと起きるかも！"
+		    echo "なにをだす？"
+		    echo "1.プリン"
+		    echo "2.いちご"
+		    while true;
+		    do
+		    read THIRD
+		    if [ "${THIRD}" == "1" ];then
+			clear
+			background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/kaputino-event2.png
+			echo "起きたみたい！"
+			sleep 3
+			background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/kaputino-event3.png
+			echo "カプチーノを誘えたよ！"
+			sleep 2
+			KAPUTINO=1
+			continue 3
+		    elif [ "${THIRD}" == "2" ];then
+			clear
+			background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/kaputino-event4.png
+			echo "起きなかったみたい..."
+			echo "一度お家に帰ろう..."
+			sleep 3
+			continue 3
+		    else
+			echo "そのような選択肢はないよ"
+			continue
+		    fi
+		    done
+		elif [ "${SECOND}" == "2" ];then
+		    clear
+		    sleep 1
+		    echo "みるくのおうちだね！"
+		    background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/miruku-event1.png
+		    echo "うわぁ、おばけ！"
+		    sleep 3
+		    background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/miruku-event2.png
+		    echo "なんだ、みるくだったのかぁ"
+		    sleep 1
+		    echo "みるくを誘えたよ！"
+		    sleep 3
+		    MILK=1
+		    continue 2 
+		else
+		    echo "そのような選択肢はないよ"
+		    continue
+		fi		
+	    done
+	elif [ "${FIRST}" == "2" ];then
+	    clear
+	    set color_normal=black/black
+	    background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/walk.jpg
+	    sleep 2
+	    echo "どこに行こうか？"
+	    echo "1.図書館"
+	    echo "2.花に囲まれたおうち"
+	    while true;
+	    do
+		read SECOND
+		if [ "${SECOND}" == "1" ];then
+		    clear
+		    background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/espresso-event2.jpg
+		    echo "図書館にきたよ！"
+		    sleep 1
+		    echo "エスプレッソがいたよ！"
+		    echo "エスプレッソ「カプチーノとみるくを誘って映画でも見ないかい？」"
+		    echo "."
+		    sleep 1
+		    echo "."
+		    sleep 1
+		    if [ $MILK == 1 ];then
+			if [ $KAPUTINO == 1 ];then
+			    echo "エスプレッソ「それじゃあみようか」"
+			    sleep 1
+			    clear
+			    background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/espresso-event2.png
+			    echo "エスプレッソを誘えたよ！"
+			    sleep 3
+			    ESPRESSO=1
+			    continue 2
+			else
+			    background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/kaputino-event4.png
+			    echo "エスプレッソ「カプチーノがまだ起きてないみたいだね...一度起こしてきてくれない？」"
+			    sleep 3
+			    continue 2
+			fi
+		    else
+			echo "エスプレッソ「ミルクとはまだあってないみたいだね...一度あってきたらどうだい？」"
+			sleep 2
+			continue 2
+		    fi
+		    
+		elif [ "${SECOND}" == "2" ];then
+		    clear
+		    background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/moka-event1.png
+		    echo "モカちゃんのおうちだね！"
+		    echo "モカちゃん「シナモンはヘアアレンジするべきよ！」"
+		    echo "."
+		    sleep 1
+		    echo "."
+		    sleep 1
+		    echo "."
+		    sleep 1
+		    background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/moka-event2.png
+		    clear
+		    echo "モカちゃん「これで完成！かっこよくなったね！」"
+		    echo
+		    echo
+		    echo "モカちゃんを誘えました！"
+		    sleep 3
+		    MOKA=1
+		    continue 2
+		else
+		    echo "そのような選択肢はないよ"
+		    continue
+		fi
+		done
+	elif [ "${FIRST}" == "3" ];then
+	    clear
+	    set color_normal=black/black
+	    background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/fly.png
+	    echo "一番遠いシフォンのおうちにいくね！"
+	    sleep 3
+	    echo ""
+	    clear
+	    background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/shifon-event1.png
+	    echo "どうやらシフォンが落ち込んでるみたい..."
+	    echo "どうしようか？"
+	    if [ $MOKA == 0 ];then
+		echo "1.元気づける言葉をかける"
+		while true;
+		      do
+		      read SECOND
+		      if [ "${SECOND}" == "" ];then
+			  continue
+		      fi
+		      if [ "${SECOND}" == "1" ];then
+			  clear
+			  background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/shifon-event2.jpg
+			  echo "かける言葉を間違えたみたい..."
+			  echo "一度おうちに帰ろう..."
+			  sleep 3
+			  continue 2
+		      else
+			  echo "そのような選択肢はないよ"
+			  continue
+		      fi
+		      done
+	    else
+		echo "1.元気づける言葉をかける"
+		echo "2.モカちゃんに頼む"
+		while true;
+		      do
+		      read SECOND
+		      if [ "${SECOND}" == "" ];then
+			  continue
+		      fi
+		      if [ "${SECOND}" == "1" ];then
+			  clear
+			  background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/shifon-event2.jpg
+			  echo "かける言葉を間違えたみたい..."
+			  echo "一度おうちに帰ろう..."
+			  sleep 3
+			  continue 2
+		      elif [ "${SECOND}" == "2" ];then
+			  clear
+			  background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/shifon-event3.png
+			  echo "シナモン「モカちゃんお願い！」"
+			  echo "モカ「任せて！」"
+			  sleep 3
+			  clear
+			  background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/shifon-event4.jpg
+			  echo "シナモン(シフォン大丈夫かな...モカちゃんお願い...)"
+			  sleep 3
+			  background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/shifon-event5.png
+			  echo "シフォン、元気になったみたい！"
+			  sleep 1
+			  echo "シフォンを誘えたよ！"
+			  SHIFON=1
+			  continue 2
+		      else
+			  echo "そのような選択肢はないよ"
+			  continue
+		      fi
+		done
+	    fi
+	elif [ "${FIRST}" == "q" ];then
+	    clear
+	    set color_normal=black/black
+	    background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/walk.jpg
+	    echo "終了します"
+	    sleep 1
+	    break
+	else
+	    echo "そのような選択肢はないよ"
+	    continue
+	fi
+    done
+    if [ $ESPRESSO == 1 ];then
+	if [ $SHIFON == 1 ];then
+	clear
+	set color_normal=black/black
+	background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/goal.jpg
+	echo "ありがとう！全員集合できたよ！"
+	#play 300 200 1 400 1 600 1 800 1 1000 1 1200 1 1400 1 1600 1 1800 1 2000 1
+	echo
+	echo
+	echo
+	echo
+	echo
+	echo
+	echo "ゲームクリアです。おめでとうございます！"
+	echo "そのままキーをいじらないでください..."
+	sleep 5
+	fi
+    fi
+    clear
+    background_image (hd0,gpt6)/home/cl/picture/grub/cinnamon/rokunin.jpg
+    echo "ありがとうございました！"
+    sleep 3
+    background_image ($root)/grub/themes/lati/leftdark_miku_resize.png
+    }
+    menuentry 'とっても簡単な迷路' --class game {
+    KEY=0
+    while true ;
+    do
+	set color_normal=white/black
+	background_image (hd0,gpt6)/home/cl/picture/grub/meiro/wakaremiti.jpg
+    	echo "右と左、どちらに進みますか？(右:1,左:2)"
+	read FIRST
+	if [ "${FIRST}" == "" ];then
+	    continue
+	fi
+	if [ "${FIRST}" == "1" ];then
+	    set color_normal=white/black
+	    background_image (hd0,gpt6)/home/cl/picture/grub/meiro/wakaremiti3.jpg
+	    clear
+    	    echo "右と左、どちらに進みますか？(右:1,左:2)"
+	    while true ;
+	    do
+		read FIRST
+		if [ "${FIRST}" == "1" ];then
+		    set color_normal=white/black
+		    background_image (hd0,gpt6)/home/cl/picture/grub/meiro/ipponmiti2.png
+    		    echo "奥から光が見える...そのまま進みます"
+		    sleep 1
+		    set color_normal=white/black
+		    background_image (hd0,gpt6)/home/cl/picture/grub/meiro/fire.jpg
+		    echo "炎上してます...start位置に戻ります"
+		    sleep 1
+		    continue 2
+		elif [ "${FIRST}" == "2" ];then
+		    set color_normal=white/black
+		    background_image (hd0,gpt6)/home/cl/picture/grub/meiro/kyatatsu.png
+    		    echo "脚立を入手した...スタート位置に戻ります"
+		    KEY=1
+		    sleep 1
+		    continue 2
+		elif [ "${FIRST}" == "q" ];then
+		    set color_normal=white/black
+	     	    echo "break処理が行われました。"
+	     	    break 2
+		else
+		    echo "無効な選択肢です"
+		    continue
+		fi
+	    done
+	elif [ "${FIRST}" == "2" ];then
+	    set color_normal=white/black
+	    background_image (hd0,gpt6)/home/cl/picture/grub/meiro/wakaremiti2.jpg
+	    clear
+    	    echo "右と左、どちらに進みますか？(右:1,左:2)"
+	    while true ;
+	    do
+		read FIRST
+		if [ "${FIRST}" == "1" ];then
+		    set color_normal=white/black
+		    background_image (hd0,gpt6)/home/cl/picture/grub/meiro/ipponmiti.jpg
+    		    clear
+		    echo "奥から光が見える...そのまま進みます"
+		    sleep 1
+		    set color_normal=white/black
+		    background_image (hd0,gpt6)/home/cl/picture/grub/meiro/doukutu1.jpg
+		    echo "上から外に出られそう..."
+		    sleep 1
+		    if [ "${KEY}" == "0" ];then
+			echo "出られる手段がない...スタート位置に戻ります"
+			sleep 1
+			continue 2
+		    else
+			echo "脚立で出れた！"
+			sleep 2
+			break 2
+		    fi
+		elif [ "${FIRST}" == "2" ];then
+		    set color_normal=white/black
+		    background_image (hd0,gpt6)/home/cl/picture/grub/meiro/ikidomari.jpg
+    		    echo "行き止まりのようだ...スタート位置に戻ります"
+		    sleep 1
+		    continue 2
+		elif [ "${FIRST}" == "q" ];then
+		    set color_normal=white/black
+	     	    echo "break処理が行われました。"
+	     	    break 2
+		else
+		    echo "無効な選択肢です"
+		    continue
+		fi
+	    done
+	elif [ "${FIRST}" == "q" ];then
+	    set color_normal=white/black
+	    echo "break処理が行われました。"
+	    break
+	else
+	    echo "無効な選択肢です"
+	    continue
+	fi
+    done
+    background_color "#000000"
+    play 1000 200 1 400 1 600 1 800 1 1000 1
+    set color_normal=white/black
+    echo "おめでとうございます！"
+    sleep 5
+    background_image ($root)/grub/themes/lati/leftdark_miku_resize.png
+    }
+    menuentry 'music' --class music {
+	play 450 392 1 415 1 466 1 523 1 0 1 523 1 0 1 523 1 523 1 0 1 466 1 466 1 466 1 415 1 415 1 392 1 415 1 392 1 349 1 330 1 0 1 466 1 0 1 330 1 0 2 466 1 466 1 523 1 466 1 415 1 392 1 392 1
+    }
+    menuentry 'ごちうさ_try' --class chino {
+    gochiusa_try
+    }
+    menuentry 'ごちうさ_short' --class chino {
+    gochiusa_short
+    }
+    menuentry 'ごちうさ(~999)' --class cocoa {
+    gochiusa_kai
+    }
+    
+}
+
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
